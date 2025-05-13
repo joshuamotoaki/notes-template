@@ -1,6 +1,5 @@
-\documentclass[11pt,letterpaper]{article}
+\documentclass[hidelinks,11pt,letterpaper]{article}
 
-% Essential packages
 \usepackage[margin=1in]{geometry}
 \setlength{\headheight}{16pt}  
 \usepackage{amsmath,amsthm,amssymb}
@@ -15,53 +14,65 @@
 \usepackage{tikz}
 \usepackage{lipsum} % For demo text only
 
-% Define colors
-\definecolor{chaptercolor}{HTML}{1B5E20}
-\definecolor{examplecolor}{HTML}{E3F2FD}
-\definecolor{exampleborder}{HTML}{1E88E5}
-\definecolor{keyideacolor}{HTML}{FFF3E0}
-\definecolor{keyideaborder}{HTML}{FF9800}
-\definecolor{remarkcolor}{HTML}{F3E5F5}
-\definecolor{remarkborder}{HTML}{9C27B0}
+% Define colors - more minimalistic
+\definecolor{headingcolor}{HTML}{0F4F46}
+\definecolor{examplecolor}{HTML}{2EB49B} 
+\definecolor{onexample}{HTML}{071815}
+\definecolor{ideacolor}{HTML}{F9DD02} 
+\definecolor{onidea}{HTML}{4B4202}
+\definecolor{remarkcolor}{HTML}{E57571} 
+\definecolor{onremark}{HTML}{050101}
 
-% Style the chapter headings
+% Style the chapter headings (now blue instead of green)
 \titleformat{\section}
-{\normalfont\LARGE\bfseries\color{chaptercolor}}
+{\normalfont\LARGE\bfseries\color{headingcolor}}
 {\thesection}{1em}{}[\titlerule]
 
-% Custom environments
+% Custom environments with new numbering format
 \newcounter{example}[section]
 \newenvironment{example}
 {\refstepcounter{example}\par\medskip
-   \begin{tcolorbox}[colback=examplecolor,
-                     colframe=exampleborder,
-                     arc=0mm,
-                     title=Example~\theexample]
+   \begin{tcolorbox}[colback=white,
+                     colframe=examplecolor,
+                     arc=0.5mm,
+                     title=Example~\thesection.\arabic{example},
+                     fonttitle=\bfseries,
+                     toptitle=4pt,
+                     bottomtitle=4pt,
+                     colbacktitle=examplecolor,
+                     coltitle=onexample]
 }
 {\end{tcolorbox}\par\medskip}
 
 \newcounter{keyidea}[section]
 \newenvironment{keyidea}
 {\refstepcounter{keyidea}\par\medskip
-   \begin{tcolorbox}[colback=keyideacolor,
-                     colframe=keyideaborder,
-                     arc=0mm,
-                     title=Key Idea~\thekeyidea]
+   \begin{tcolorbox}[colback=white,
+                     colframe=ideacolor,
+                     arc=0.5mm,
+                     title=Key Idea~\thesection.\arabic{keyidea},
+                     fonttitle=\bfseries,
+                     toptitle=4pt,
+                     bottomtitle=4pt,
+                     colbacktitle=ideacolor,
+                     coltitle=onidea]
 }
 {\end{tcolorbox}\par\medskip}
 
 \newcounter{remark}[section]
 \newenvironment{remark}
 {\refstepcounter{remark}\par\medskip
-   \begin{tcolorbox}[colback=remarkcolor,
-                     colframe=remarkborder,
-                     arc=0mm,
-                     title=Remark~\theremark]
+   \begin{tcolorbox}[colback=white,
+                     colframe=remarkcolor,
+                     arc=0.5mm,
+                     title=Remark~\thesection.\arabic{remark},
+                     fonttitle=\bfseries,
+                     toptitle=4pt,
+                     bottomtitle=4pt,
+                     colbacktitle=remarkcolor,
+                     coltitle=onremark]
 }
 {\end{tcolorbox}\par\medskip}
-
-% Style footnotes with symbols
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 % Header and footer
 \pagestyle{fancy}
@@ -76,7 +87,7 @@
 \newcommand{\bookname}{}
 \newcommand{\booknotes}[3]{
     \renewcommand{\bookname}{#1}
-    \title{\textbf{\Huge{Notes on:}\\\Huge{\textcolor{chaptercolor}{#1}}}}
+    \title{\textbf{\Huge{Notes on:}\\\Huge{\textcolor{headingcolor}{#1}}}}
     \author{#2}
     \date{#3}
 }
@@ -151,6 +162,10 @@ In this chapter, we explore infinite sequences and series, their convergence pro
 
 \begin{remark}
     While many sequences converge, there are important examples of divergent sequences like $a_n = (-1)^n$ and $a_n = n$.
+\end{remark}
+
+\begin{remark}
+    Hih
 \end{remark}
 
 \end{document}
