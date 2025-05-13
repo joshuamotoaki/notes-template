@@ -12,9 +12,7 @@
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{tikz}
-\usepackage{lipsum} % For demo text only
 
-% Define colors - more minimalistic
 \definecolor{headingcolor}{HTML}{0F4F46}
 \definecolor{examplecolor}{HTML}{2EB49B} 
 \definecolor{onexample}{HTML}{071815}
@@ -23,12 +21,10 @@
 \definecolor{remarkcolor}{HTML}{E57571} 
 \definecolor{onremark}{HTML}{050101}
 
-% Style the chapter headings (now blue instead of green)
 \titleformat{\section}
 {\normalfont\LARGE\bfseries\color{headingcolor}}
 {\thesection}{1em}{}[\titlerule]
 
-% Custom environments with new numbering format
 \newcounter{example}[section]
 \newenvironment{example}
 {\refstepcounter{example}\par\medskip
@@ -74,7 +70,6 @@
 }
 {\end{tcolorbox}\par\medskip}
 
-% Header and footer
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\textit{\bookname}}
@@ -82,7 +77,6 @@
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 
-% Document title and information
 \newcommand{\bookname}{}
 \newcommand{\booknotes}[3]{
     \renewcommand{\bookname}{#1}
@@ -93,7 +87,7 @@
 
 \begin{document}
 
-\booknotes{Mathematical Analysis}{Joshua Motoaki Lau}{Summer 2025}
+\booknotes{Sample Document}{Joshua Motoaki Lau}{Summer 2025}
 \maketitle
 \tableofcontents
 \newpage
@@ -105,8 +99,6 @@ This chapter covers the foundations of real analysis, beginning with properties 
 \begin{keyidea}
     The completeness property of real numbers states that every non-empty set of real numbers that is bounded above has a least upper bound.
 \end{keyidea}
-
-Now, let's talk about cheese!
 
 \begin{example}
     Consider the set $S = \{x \in \mathbb{R} : x^2 < 2\}$. 
@@ -124,21 +116,6 @@ Now, let's talk about cheese!
 \begin{remark}
     The completeness property distinguishes the real numbers from the rational numbers. For instance, the set $\{x \in \mathbb{Q} : x^2 < 2\}$ has no least upper bound in $\mathbb{Q}$.
 \end{remark}
-
-Here's a visual representation of the concept of least upper bound:
-
-\begin{figure}[h]
-    \centering
-    \begin{tikzpicture}
-        \draw[->] (-1,0) -- (4,0) node[right] {$\mathbb{R}$};
-        \draw[thick, blue] (0,0.1) -- (1.414,0.1);
-        \draw[thick, blue] (1.414,0.1) -- (1.414,0);
-        \draw[fill] (1.414,0) circle (0.05) node[below] {$\sqrt{2}$};
-        \node[blue] at (0.7,0.3) {$S$};
-    \end{tikzpicture}
-    \caption{The set $S = \{x \in \mathbb{R} : x^2 < 2\}$ with least upper bound $\sqrt{2}$}
-    \label{fig:lub}
-\end{figure}
 
 A proper understanding of completeness\footnote{This concept was first rigorously formulated by Dedekind in the 19th century.} is essential for developing the theory of limits and continuity.
 
